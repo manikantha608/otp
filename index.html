@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 400px;
+            height: 550px;
+            margin: 5% auto;
+            background-color: #f2f2f1;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        .img{
+            margin: 20% 27%;
+        }
+        .img img{
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+        }
+        .registration p{
+            text-align: center;
+        }
+        .fp{
+            font-size: 25px;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+        .sp{
+
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #545151;
+        }
+        #otpbtn{
+            padding: 8px 55px;
+            border-radius: 30px;
+            border: none;
+            margin-left: 120px;
+            background-color: rgb(186, 10, 221);
+            color: #f6f3f3;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+           <div class="img">
+            <img src="./otp_main.png">
+           </div>
+           <div class="registration">
+            <p class="fp">Verification</p>
+            <p class="sp"> Your OTP code number </p>
+            <button id="otpbtn">Get OTP</button>
+           </div>
+    </div>
+    <script>
+        var getOtp = document.getElementById("otpbtn")
+        getOtp.addEventListener("click",()=>{
+             let res = Math.random()*9*100000;
+             console.log(Math.trunc(res))
+             let verification = document.getElementsByClassName("fp")
+             verification[0].innerHTML=Math.trunc(res)
+            
+        })
+    </script>
+</body>
+</html>
